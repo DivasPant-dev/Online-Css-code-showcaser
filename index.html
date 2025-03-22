@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online code</title>
+
+    <style>
+        h1 {
+            font-size: 3rem;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 400px;
+        }
+
+        .showcase {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            background-color: transparent;
+            color: black;
+            translate: -200px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        textarea {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Code in css here (css only)
+    </h1>
+
+    <div class="container">
+        <div class="compiler">
+            <textarea id="textarea" rows="40" cols="50" placeholder="Please write the code only do not write the classes like .container-example. Also don't forget the semicolon(;)"></textarea>
+        </div>
+
+        <div class="showcase-div">
+            <div class="showcase">
+                Code applies here
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const textarea = document.getElementById("textarea");
+        const showcase = document.querySelector(".showcase");
+
+        textarea.addEventListener("input", (event) => {
+            const cssCode = textarea.value;
+
+            showcase.style.cssText = cssCode;
+        });
+    </script>
+</body>
+</html>
